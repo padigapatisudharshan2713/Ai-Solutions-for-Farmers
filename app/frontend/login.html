@@ -1,0 +1,50 @@
+{% extends "index.html" %}
+
+
+{% block navbar %}
+  <li><a href="/" class="nav-link scrollto"><i class="bx bx-home"></i> <span>Home</span></a></li>
+  <li><a href="/about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
+  <li><a href="/register" class="nav-link scrollto"><i class="bx bx-user-plus"></i> <span>Register</span></a></li>
+  <li><a href="/login" class="nav-link scrollto active"><i class="bx bx-log-in"></i> <span>Login</span></a></li>
+{% endblock %}
+
+
+{% block main %}
+<div class="row">
+    <div class="col-5">
+    </div>
+
+    <div class="col-5">
+        <section id="resume" class="resume">
+            <div class="container">
+
+                <div class="section-title" style="    margin-left: 42px;">
+                    <h2>Login</h2>
+                </div>
+        
+              
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+
+                    <center>
+
+                        <input type="email" name="email" placeholder="Enter Email ID" class="form-control"><br><br>
+
+                        <input type="password" name="password" placeholder="Enter password" class="form-control"><br><br>
+
+
+                        <input type="submit" class="btn btn-primary"><br>
+                    </center>
+                </form>
+
+            </div>
+        </section>
+    </div>
+
+    <div class="col-3">
+    </div>
+</div>
+  
+
+
+{% endblock %}
